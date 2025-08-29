@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ciudad Imaginaria - Demo SVG</title>
+</head>
+
+<body>
+    <h2>Ciudad Imaginaria Interactiva</h2>
+    
+
+    <svg width="600" height="400" style="border:1px solid black; background:#f0f0f0">
+
+        <!-- Calle principal -->
+        <rect x="0" y="150" width="600" height="100" fill="#d0d0d0" />
+
+        <!-- Plaza -->
+        <circle id="plaza" cx="300" cy="200" r="40" fill="lightgreen" stroke="black" />
+
+        <!-- Parque -->
+        <rect id="parque" x="450" y="50" width="120" height="80" fill="lightseagreen" stroke="black" />
+
+        <!-- Edificios -->
+        <rect id="edificio1" x="80" y="80" width="80" height="80" fill="lightblue" stroke="black" />
+        <rect id="edificio2" x="220" y="50" width="80" height="80" fill="lightcoral" stroke="black" />
+        <rect id="edificio3" x="150" y="260" width="80" height="80" fill="khaki" stroke="black" />
+
+        <!-- Textos informativos (ocultos al inicio) -->
+        <text id="info" x="20" y="20" font-size="16" visibility="hidden" fill="black"></text>
+
+        <!-- Script de interactividad -->
+        <script>
+            // Función genérica para mostrar info al pasar el ratón
+            function activarInteractividad(elemento, nombre) {
+                elemento.addEventListener("mouseover", () => {
+                    elemento.setAttribute("opacity", "0.7");
+                    document.getElementById("info").textContent = nombre;
+                    document.getElementById("info").setAttribute("visibility", "visible");
+                });
+                elemento.addEventListener("mouseout", () => {
+                    elemento.setAttribute("opacity", "1");
+                    document.getElementById("info").setAttribute("visibility", "hidden");
+                });
+                elemento.addEventListener("click", () => {
+                    alert("Has entrado en " + nombre);
+                });
+            }
+
+            // Asociar interactividad a los elementos
+            activarInteractividad(document.getElementById("edificio1"), "Edificio Azul - Ayuntamiento");
+            activarInteractividad(document.getElementById("edificio2"), "Edificio Rojo - Biblioteca");
+            activarInteractividad(document.getElementById("edificio3"), "Edificio Amarillo - Museo");
+            activarInteractividad(document.getElementById("plaza"), "Plaza Central");
+            activarInteractividad(document.getElementById("parque"), "Parque de la Ciudad");
+        </script>
+    </svg>
+
+    <p>Pasa el ratón por los edificios, la plaza o el parque y haz clic para descubrir información.</p>
+</body>
+
+</html>
