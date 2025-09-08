@@ -41,31 +41,32 @@
 
   <!-- Texto informativo (oculto al inicio) -->
   <text id="info" x="20" y="20" font-size="16" visibility="hidden" fill="black"></text>
+<!-- Script de interactividad -->
+<script>
+  function activarInteractividad(elemento, nombre) {
+    elemento.addEventListener("mouseover", () => {
+      elemento.setAttribute("opacity", "0.7");
+      document.getElementById("info").textContent = nombre;
+      document.getElementById("info").setAttribute("visibility", "visible");
+    });
+    elemento.addEventListener("mouseout", () => {
+      elemento.setAttribute("opacity", "1");
+      document.getElementById("info").setAttribute("visibility", "hidden");
+    });
+    elemento.addEventListener("click", () => {
+      alert("Has entrado en " + nombre);
+    });
+  }
 
-  <!-- Script de interactividad -->
-  <script>
-    function activarInteractividad(elemento, nombre) {
-      elemento.addEventListener("mouseover", () => {
-        elemento.setAttribute("opacity", "0.7");
-        document.getElementById("info").textContent = nombre;
-        document.getElementById("info").setAttribute("visibility", "visible");
-      });
-      elemento.addEventListener("mouseout", () => {
-        elemento.setAttribute("opacity", "1");
-        document.getElementById("info").setAttribute("visibility", "hidden");
-      });
-      elemento.addEventListener("click", () => {
-        alert("Has entrado en " + nombre);
-      });
-    }
+  activarInteractividad(document.getElementById("edificio1"), "Edificio Azul - Ayuntamiento");
+  activarInteractividad(document.getElementById("edificio2"), "Edificio Rojo - Biblioteca");
+  activarInteractividad(document.getElementById("edificio3"), "Edificio Amarillo - Museo");
+  activarInteractividad(document.getElementById("plaza"), "Plaza Central");
+  activarInteractividad(document.getElementById("parque"), "Parque de la Ciudad");
+</script>
 
-    activarInteractividad(document.getElementById("edificio1"), "Edificio Azul - Ayuntamiento");
-    activarInteractividad(document.getElementById("edificio2"), "Edificio Rojo - Biblioteca");
-    activarInteractividad(document.getElementById("edificio3"), "Edificio Amarillo - Museo");
-    activarInteractividad(document.getElementById("plaza"), "Plaza Central");
-    activarInteractividad(document.getElementById("parque"), "Parque de la Ciudad");
-  </script>
 </svg>
+ 
 
 <p>Pasa el ratón por los edificios, la plaza o el parque y observa el coche recorrer la calle 🚗.</p>
 </body>
