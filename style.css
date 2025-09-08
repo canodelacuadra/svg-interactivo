@@ -1,5 +1,50 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 960px;
-    margin: 0 auto;
-}
+ @keyframes zoom-in {
+     from {
+         opacity: 0;
+         scale: 2;
+     }
+
+     to {
+         opacity: 1;
+         scale: 1;
+     }
+ }
+
+ @keyframes escalar {
+     from {
+         scale: 1;
+     }
+
+     to {
+         scale: 1.2;
+     }
+ }
+
+ .persona:hover {
+     stroke: orange;
+     /* Color del borde */
+     stroke-width: 2px;
+     /* Grosor del borde */
+     transform: scale(1.2);
+     /* Escala el grupo al 50% de su tamaño original */
+     transform-origin: center;
+     /* Opcional: define el punto de origen de la escala */
+ }
+
+ .modal-box {
+     display: none;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background-color: whitesmoke;
+     padding: 1em;
+     border: double 6px gray;
+
+
+
+ }
+
+ .mostrar {
+     display: block;
+ }

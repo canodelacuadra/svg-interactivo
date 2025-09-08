@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg interactivo</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            padding: 1em;
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: rgb(230, 214, 245);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: url(pattern.svg);
+
+        }
+
+        h1,
+        p {
+            background-color: whitesmoke;
+            padding: 1em;
+
+        }
+
+        object {
+            background-color: rgba(223, 201, 243, 0.7);
+            padding: 1em;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+     
+
+        <object type="image/svg+xml" data="escudo-madrid.svg" class="logo">
+
+        </object>
+        <h1>Svg animado e interactivo</h1>
+        <p> El escudo de Madrid es una imagen SVG. Este svg tiene comportamiento cuando se pasa el ratón sobre los elementos del
+            svg y cuando
+            se hace click en alguno de ellos. También tiene una animación algún elemento cuando se carga la página.
+        </p>
+        <p>También hay un svg como patrón de fondo en el fondo de la página</p>
+    </div>
+
+</body>
+
+</html>

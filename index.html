@@ -1,72 +1,40 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Ciudad Imaginaria con Animación</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG</title>
 </head>
+
 <body>
-<h2>Ciudad Imaginaria Interactiva con Animación</h2>
+    <h1>Presencia de los SVG en la web</h1>
+    <p>
+        Los SVG (Scalable Vector Graphics) están presentes en muchísimos recursos de la web porque son un formato
+        ligero,
+        escalable y perfecto para gráficos que no pierden calidad.
+    </p>
+    <h2>Dónde encontrarlos</h2>
+    <p>Como recursos en la interfaz gráfica para el diseño y desarrollo web </p>
+    <ul>
+        <li>Iconos : Font Awesome, Heroicons, Feather Icons, Material Icons suelen ofrecer versiones en SVG.</li>
+        <li>Ilustraciones: Páginas como undraw.co ofrecen ilustraciones en SVG para usar libremente.</li>
+        <li>Animaciones : hay librerías como https://www.svgator.com/ que trabajan con svg </li>
+        <li>Fondos y patrones</li>
+        <li>Librerías con chart.js usan svg para renderizar los gráficos</li>
+        <li>La mayoría de logotipos en la actualidad se muestran en svg </li>
+        <li>Existen una gran cantidad de bancos gratuitos : flaticon, svg repo, pixebay, repositorios de github....</li>
+    </ul>
+    <p> Pongo dos ejemplos de svg con animaciones e interacciones</p>
+    <ul>
+        <li><a href="familia.html">Familia</a></li>
+        <li><a href="escudo.html">Escudo de Madrid</a></li>
+        <li><a href=""></a> Foto interactiva</li>
+    </ul>
 
-<svg width="600" height="400" style="border:1px solid black; background:#f0f0f0">
 
-  <!-- Calle principal -->
-  <rect x="0" y="150" width="600" height="100" fill="#d0d0d0" />
 
-  <!-- Plaza -->
-  <circle id="plaza" cx="300" cy="200" r="40" fill="lightgreen" stroke="black" />
 
-  <!-- Parque -->
-  <rect id="parque" x="450" y="50" width="120" height="80" fill="lightseagreen" stroke="black" />
-
-  <!-- Edificios -->
-  <rect id="edificio1" x="80" y="80" width="80" height="80" fill="lightblue" stroke="black" />
-  <rect id="edificio2" x="220" y="50" width="80" height="80" fill="lightcoral" stroke="black" />
-  <rect id="edificio3" x="150" y="260" width="80" height="80" fill="khaki" stroke="black" />
-
-  <!-- Coche (círculo + rectángulo para que se vea divertido) -->
-  <g id="coche">
-    <rect x="-20" y="-10" width="40" height="20" fill="red" rx="5" ry="5" />
-    <circle cx="-10" cy="12" r="6" fill="black" />
-    <circle cx="10" cy="12" r="6" fill="black" />
-  </g>
-
-  <!-- Trayectoria del coche (línea de la calle) -->
-  <path id="trayecto" d="M 0 200 L 600 200" stroke="none" fill="none"/>
-
-  <!-- Animación: el coche recorre el trayecto -->
-  <animateMotion xlink:href="#coche" dur="8s" repeatCount="indefinite" rotate="auto">
-    <mpath xlink:href="#trayecto" />
-  </animateMotion>
-
-  <!-- Texto informativo (oculto al inicio) -->
-  <text id="info" x="20" y="20" font-size="16" visibility="hidden" fill="black"></text>
-
-  <!-- Script de interactividad -->
-  <script>
-    function activarInteractividad(elemento, nombre) {
-      elemento.addEventListener("mouseover", () => {
-        elemento.setAttribute("opacity", "0.7");
-        document.getElementById("info").textContent = nombre;
-        document.getElementById("info").setAttribute("visibility", "visible");
-      });
-      elemento.addEventListener("mouseout", () => {
-        elemento.setAttribute("opacity", "1");
-        document.getElementById("info").setAttribute("visibility", "hidden");
-      });
-      elemento.addEventListener("click", () => {
-        alert("Has entrado en " + nombre);
-      });
-    }
-
-    activarInteractividad(document.getElementById("edificio1"), "Edificio Azul - Ayuntamiento");
-    activarInteractividad(document.getElementById("edificio2"), "Edificio Rojo - Biblioteca");
-    activarInteractividad(document.getElementById("edificio3"), "Edificio Amarillo - Museo");
-    activarInteractividad(document.getElementById("plaza"), "Plaza Central");
-    activarInteractividad(document.getElementById("parque"), "Parque de la Ciudad");
-  </script>
-</svg>
-
-<p>Pasa el ratón por los edificios, la plaza o el parque y observa el coche recorrer la calle 🚗.</p>
 </body>
+
 </html>
