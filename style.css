@@ -1,3 +1,9 @@
+ body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     width: 960px;
+     margin: 0 auto;
+ }
+ 
  @keyframes zoom-in {
      from {
          opacity: 0;
